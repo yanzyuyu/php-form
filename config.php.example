@@ -1,0 +1,16 @@
+<?php
+// Template file untuk konfigurasi database
+// Copy file ini ke config.php dan sesuaikan isinya
+
+$host = "localhost";
+$user = "username_kamu";
+$pass = "password_kamu";
+$db   = "nama_database_kamu";
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Koneksi gagal: " . $e->getMessage());
+}
+?>
