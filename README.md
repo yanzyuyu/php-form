@@ -54,12 +54,22 @@ Pindahkan folder project ke `htdocs` (untuk XAMPP), lalu buka di browser:
 
 ---
 
-## 🔑 Akun Demo (Default)
+## 🛠️ Pengembangan (Tailwind CSS v4)
 
-| Role | Username | Password |
-| :--- | :--- | :--- |
-| **Owner** | `pemilik` | `password123` |
-| **Admin** | `admin` | `admin123` |
+Jika Anda ingin mengubah desain atau memodifikasi file CSS:
+
+1.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
+2.  **Mode Watch (Auto-update)**:
+    ```bash
+    npm run dev
+    ```
+3.  **Build Final (Minify)**:
+    ```bash
+    npm run build
+    ```
 
 ---
 
