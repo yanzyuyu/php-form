@@ -35,7 +35,7 @@ Pastikan Anda sudah menginstal **XAMPP** atau web server sejenis (Apache, MySQL,
 
 ### 2. Clone Repository
 ```bash
-git clone https://github.com/USERNAME_KAMU/php-form.git
+git clone https://github.com/yanzyuyu/php-form.git
 cd php-form
 ```
 
