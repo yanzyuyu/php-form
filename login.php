@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="https://github.com/yanzyuyu">
                     <span class="px-3 py-1 bg-slate-100 rounded-full whitespace-nowrap">&copy; yanzyuyu</span>
             </a>
-            <a href="">
+            <a href="https://github.com/yanzyuyu/php-form">
                     <span class="px-3 py-1 bg-slate-100 rounded-full whitespace-nowrap">repository</span>
             </a>
 
