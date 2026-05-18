@@ -100,11 +100,11 @@ if (!isset($_SESSION['user_id'])) {
 
 <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-16 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
     <div class="flex-1 text-center lg:text-left">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-[1.1] mb-6 md:mb-8 italic">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-[1.1] mb-6 md:mb-8">
             Digitalisasi <br><span class="text-indigo-600">Data Siswa.</span>
         </h1>
         <p class="text-slate-500 text-base md:text-lg font-medium leading-relaxed max-w-md mx-auto lg:mx-0">
-            Sistem input data yang bersih, cepat, dan terorganisir. Semua data langsung tersimpan aman dalam database cloud.
+            Sistem input data yang bersih, cepat, dan terorganisir. Semua data langsung tersimpan aman dalam database mysql.
         </p>
     </div>
 

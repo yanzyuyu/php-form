@@ -8,21 +8,22 @@ if (isset($_SESSION['user_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'] ?? '';
+    $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->execute([$username]);
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->execute([$email]);
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
+        $_SESSION['email'] = $user['email'];
         $_SESSION['role'] = $user['role'];
         header("Location: index.php");
         exit;
     } else {
-        $error = "Username atau password salah!";
+        $error = "Email atau password salah!";
     }
 }
 ?>
@@ -70,8 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <form method="POST" class="space-y-5 md:space-y-6 relative custom-form text-slate-800" novalidate>
                 <div class="space-y-2 relative field-group">
-                    <label class="text-[10px] font-black uppercase text-slate-400 tracking-widest ml-1 leading-tight text-slate-800">Username</label>
-                    <input type="text" name="username" placeholder="Masukkan username" class="w-full px-5 py-4 bg-slate-50/50 border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all font-medium text-slate-800" required autofocus>
+                    <label class="text-[10px] font-black uppercase text-slate-400 tracking-widest ml-1 leading-tight text-slate-800">Email</label>
+                    <input type="email" name="email" placeholder="nama@email.com" class="w-full px-5 py-4 bg-slate-50/50 border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all font-medium text-slate-800" required autofocus>
                 </div>
                 <div class="space-y-2 relative field-group">
                     <label class="text-[10px] font-black uppercase text-slate-400 tracking-widest ml-1 leading-tight text-slate-800">Password</label>

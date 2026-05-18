@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$stmt = $pdo->query("SELECT ds.*, u.username as creator 
+$stmt = $pdo->query("SELECT ds.*, u.username as creator, u.role as creator_role
                      FROM data_siswa ds 
                      LEFT JOIN users u ON ds.created_by = u.id 
                      ORDER BY ds.created_at DESC");
@@ -132,8 +132,11 @@ $data = $stmt->fetchAll();
                                 </div>
                                 <div class="min-w-0">
                                     <p class="font-bold text-slate-800 tracking-tight leading-tight truncate"><?= htmlspecialchars($row['nama']) ?></p>
-                                    <p class="text-[9px] font-black text-slate-400 uppercase mt-0.5 tracking-wider truncate">
+                                    <p class="text-[9px] font-black text-slate-400 uppercase mt-0.5 tracking-wider truncate flex items-center gap-1.5">
                                         Oleh: <span class="text-indigo-500 font-black"><?= htmlspecialchars($row['creator'] ?? 'Sistem') ?></span>
+                                        <span class="px-1.5 py-0.5 bg-indigo-50 text-indigo-600 border border-indigo-100 rounded-md">
+                                            <?= htmlspecialchars($row['creator_role'] ?? 'system') ?>
+                                        </span>
                                     </p>
                                 </div>
                             </div>

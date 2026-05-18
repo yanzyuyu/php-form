@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <main class="max-w-xl mx-auto py-8 md:py-16 px-4 md:px-6">
     <div class="mb-8 md:mb-10 text-center text-slate-800">
         <h1 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight">Ubah Pengguna</h1>
-        <p class="text-slate-400 font-medium mt-2 italic text-sm">Target: @<?= htmlspecialchars($user_edit['username']) ?></p>
+        <p class="text-slate-400 font-medium mt-2 italic text-sm">Target: <?= htmlspecialchars($user_edit['email'] ?? $user_edit['username']) ?></p>
     </div>
 
     <div class="bg-white p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-indigo-50/50">
